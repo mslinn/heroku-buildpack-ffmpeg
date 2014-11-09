@@ -4,6 +4,8 @@ indent() {
   sed -u 's/^/       /'
 }
 
+bash -xv
+
 BUILD_DIR=$1
 echo "-----> Install ffmpeg using BUILD_DIR=$BUILD_DIR"
 VENDOR_DIR="vendor"
