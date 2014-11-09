@@ -11,6 +11,7 @@ DOWNLOAD_URL="http://www.mavenrepo.s3.amazonaws.com/releases/ffmpeg.tar.gz"
 echo "DOWNLOAD_URL = " $DOWNLOAD_URL | indent
 
 cd $BUILD_DIR
+rm -rf $VENDOR_DIR
 mkdir -p $VENDOR_DIR
 cd $VENDOR_DIR
 curl -L --silent $DOWNLOAD_URL | tar xz
