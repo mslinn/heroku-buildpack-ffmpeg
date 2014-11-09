@@ -7,19 +7,22 @@ indent() {
 BUILD_DIR=$1
 echo "-----> Install ffmpeg using BUILD_DIR=$BUILD_DIR"
 VENDOR_DIR="vendor"
-DOWNLOAD_URL="http://www.mavenrepo.s3.amazonaws.com/releases/ffmpeg.tar.gz"
+DOWNLOAD_URL="http://johnvansickle.com/ffmpeg/releases/ffmpeg-2.4.3-32bit-static.tar.xz"
 echo "DOWNLOAD_URL = " $DOWNLOAD_URL | indent
 
 cd $BUILD_DIR
 mkdir -p $VENDOR_DIR
 cd $VENDOR_DIR
 curl -L --silent $DOWNLOAD_URL | tar xz
+mv ffmpeg* tmpff
+mkdir -p ffmpeg
+mv tmpff ffmpeg/bin
 
 echo "exporting PATH and LIBRARY_PATH" | indent
 PROFILE_PATH="$BUILD_DIR/.profile.d/ffmpeg.sh"
 echo "PROFILE_PATH=$PROFILE_PATH"
 mkdir -p $(dirname $PROFILE_PATH)
 echo 'export PATH="$PATH:vendor/ffmpeg/bin"' >> $PROFILE_PATH
-echo 'export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:vendor/ffmpeg/lib"' >> $PROFILE_PATH
+#echo 'export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:vendor/ffmpeg/lib"' >> $PROFILE_PATH
 echo "-----> Contents of $PROFILE_PATH is:"
 cat "$PROFILE_PATH"
