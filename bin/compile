@@ -15,8 +15,8 @@ mkdir -p $VENDOR_DIR
 cd $VENDOR_DIR
 curl -L --silent $DOWNLOAD_URL | tar xJ
 mv ffmpeg* tmpff
-mkdir -p ffmpeg
-mv tmpff ffmpeg/bin
+mkdir -p /app/vendor/ffmpeg
+mv tmpff /app/vendor/ffmpeg/bin
 
 echo "exporting PATH and LIBRARY_PATH" | indent
 PROFILE_PATH="$BUILD_DIR/.profile.d/ffmpeg.sh"
