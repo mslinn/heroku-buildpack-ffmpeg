@@ -14,7 +14,7 @@ echo "DOWNLOAD_URL = " $DOWNLOAD_URL | indent
 cd $BUILD_DIR
 mkdir -p $VENDOR_DIR/ffmpeg/bin
 cd $VENDOR_DIR/ffmpeg/bin
-curl -L --silent $DOWNLOAD_URL | tar xz --strip-components=1
+curl -L --silent $DOWNLOAD_URL | tar xJ --strip-components=1
 cd -
 
 echo "exporting PATH and LIBRARY_PATH" | indent
