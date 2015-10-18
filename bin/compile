@@ -9,7 +9,7 @@ cd $BUILD_DIR
 
 echo "-----> Install ffmpeg using BUILD_DIR=$BUILD_DIR"
 #DOWNLOAD_URL="http://www.mavenrepo.s3.amazonaws.com/releases/ffmpeg.tar.gz"
-DOWNLOAD_URL="http://johnvansickle.com/ffmpeg/releases/ffmpeg-release-32bit-static.tar.xz"
+DOWNLOAD_URL="http://johnvansickle.com/ffmpeg/releases/ffmpeg-release-64bit-static.tar.xz"
 echo "DOWNLOAD_URL = " $DOWNLOAD_URL | indent
 
 #mkdir -p vendor/ffmpeg/bin
